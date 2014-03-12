@@ -1,6 +1,8 @@
 Recreation of acceptance tests hanging with Ember > 1.4.0 and httpRespond
 =========================================================================
 
+Per issue https://github.com/trek/ember-testing-httpRespond/issues/10
+
 1. Run a server. I used `python -m SimpleHTTPServer 8000` to do so.
 2. Go to `http://localhost:8000?test` See the acceptance tests hang.
 3. There are two other ember versions commented out in `index.html`. Switch to 1.4.0.beta.6 to
