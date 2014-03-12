@@ -8,6 +8,9 @@ if (window.location.search.indexOf("?test") !== -1) {
     '<link rel="stylesheet" href="tests/runner.css">' +
     '<link rel="stylesheet" href="tests/vendor/qunit-1.12.0.css">' +
     '<script src="tests/vendor/qunit-1.12.0.js"></script>' +
+    '<script src="tests/vendor/fake_xml_http_request.js"></script>'+
+    '<script src="tests/vendor/fakehr.js"></script>' +
+    '<script src="tests/vendor/httpRespond.js"></script>' +
     '<script src="tests/tests.js"></script>'
   )
 }

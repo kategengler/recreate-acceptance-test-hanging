@@ -16,14 +16,22 @@
   <script type="text/x-handlebars" id="index">
     <ul>
     {{#each item in model}}
-      <li>{{item}}</li>
+      <li>{{item.name}}</li>
     {{/each}}
     </ul>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
   <script src="js/libs/handlebars-1.1.2.js"></script>
+
+  <!-- Acceptance tests w/httpRespond hang with > ember 1.4.0 -->
   <script src="js/libs/ember-1.4.0.js"></script>
+  <!--<script src="js/libs/ember-1.5.0.beta.4.js"></script>-->
+
+  <!-- Acceptance tests w/httpRespond do not hang before ember 1.4.0 -->
+  <!--<script src="js/libs/ember-1.4.0.beta.6.js"></script>-->
+
+  <script src="http://builds.emberjs.com/beta/ember-data.js"></script>
   <script src="js/app.js"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
