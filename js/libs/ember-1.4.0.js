@@ -41478,7 +41478,7 @@ function visit(app, url) {
     Ember.run(app, app.handleURL, url);
   }
 
-  return wait(app);
+  return app.testHelpers.wait(app);
 }
 
 function click(app, selector, context) {
@@ -41504,7 +41504,7 @@ function click(app, selector, context) {
   Ember.run($el, 'mouseup');
   Ember.run($el, 'click');
 
-  return wait(app);
+  return app.testHelpers.wait(app);
 }
 
 function triggerEvent(app, selector, context, event){
@@ -41517,7 +41517,7 @@ function triggerEvent(app, selector, context, event){
 
   Ember.run($el, 'trigger', event);
 
-  return wait(app);
+  return app.testHelpers.wait(app);
 }
 
 function keyEvent(app, selector, context, type, keyCode) {
@@ -41530,7 +41530,7 @@ function keyEvent(app, selector, context, type, keyCode) {
   $el = findWithAssert(app, selector, context);
   var event = Ember.$.Event(type, { keyCode: keyCode });
   Ember.run($el, 'trigger', event);
-  return wait(app);
+  return app.testHelpers.wait(app);
 }
 
 function fillIn(app, selector, context, text) {
@@ -41543,7 +41543,7 @@ function fillIn(app, selector, context, text) {
   Ember.run(function() {
     $el.val(text).change();
   });
-  return wait(app);
+  return app.testHelpers.wait(app);
 }
 
 function findWithAssert(app, selector, context) {
@@ -41563,7 +41563,7 @@ function find(app, selector, context) {
 }
 
 function andThen(app, callback) {
-  return wait(app, callback(app));
+  return app.testHelpers.wait(app, callback(app));
 }
 
 function wait(app, value) {
@@ -41729,7 +41729,7 @@ helper('findWithAssert', findWithAssert);
     .fillIn('#password', username)
     .click('.submit')
 
-    return wait();
+    return app.testHelpers.wait();
   });
 
   @method wait
